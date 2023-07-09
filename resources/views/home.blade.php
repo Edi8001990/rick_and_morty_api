@@ -7,9 +7,10 @@
       <title>Rick and Morty API</title>
     </head>
     <body>
+      
       <ul>
-       @foreach ($animals as $animals)
-        <li>{{$animals}}</li>
+        @foreach ($characters as $characters)
+            <li>{{ $characters['name'] }}</li>
         @endforeach
       </ul>
     <script src="{{ asset('js/app.js') }}"></script>
