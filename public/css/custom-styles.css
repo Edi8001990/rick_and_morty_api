@@ -1,3 +1,7 @@
 h1{
-    color:blue;
+    font-size: 25px;
+}
+
+.character-box{
+   margin:15px 30px;
 }

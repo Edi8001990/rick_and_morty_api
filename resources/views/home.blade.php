@@ -7,12 +7,17 @@
       <title>Rick and Morty API</title>
     </head>
     <body>
-      
-      <ul>
-        @foreach ($characters as $characters)
-            <li>{{ $characters['name'] }}</li>
-        @endforeach
-      </ul>
+      <div class="container">
+      <div class="row text-center">
+      <h1>Rick and Morty API</h1> 
+            @foreach ($characters as $character)
+                <div class="col-md-3 character-box">
+                    <img src="{{ $character['image'] }}" alt="{{ $character['name'] }}">
+                    <h1>{{ $character['name'] }}</h1>
+                </div>
+            @endforeach
+        </div>
+      </div>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
