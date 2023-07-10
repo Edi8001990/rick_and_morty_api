@@ -8,12 +8,12 @@
     </head>
     <body>
       <div class="container">
-      <div class="row text-center">
+      <div class="row text-center list-box">
       <h1>Rick and Morty API</h1> 
             @foreach ($characters as $character)
                 <div class="col-md-3 character-box">
                     <img src="{{ $character['image'] }}" alt="{{ $character['name'] }}">
-                   <a href="{{ route('character.show', ['id' => $character['name']]) }}"><h1>{{ $character['name'] }}</h1></a>
+                   <a href="{{ route('character-details.show-details', ['id' => $character['id']]) }}"><h1>{{ $character['name'] }}</h1></a>
                    
                 </div>
             @endforeach
@@ -22,3 +22,5 @@
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
+
+

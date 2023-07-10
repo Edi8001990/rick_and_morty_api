@@ -7,26 +7,32 @@ use Illuminate\Support\Facades\Http;
 class CharacterController extends Controller
 {
 
+    // Get characters list at the home.blade.php
 
     public function getCharactersList(){
 
         $response = Http::get('https://rickandmortyapi.com/api/character');
-        $characters = $response->json(['results']);
+        $characters = $response->json()['results'];
 
         return view('home', ['characters' => $characters]);
      }
 
 
 
-     public function showCharacterUrl($id){
+     // Get character details at the character-details.blade.php
 
-        $response = Http::get('https://rickandmortyapi.com/api/character/{$id}');
-        $character = $response->json();
+     public function getCharacterDetails($id){
+
+        $characterResponse = Http::get("https://rickandmortyapi.com/api/character/{$id}");
+        $character = $characterResponse->json();
+
+        return view('character-details', ['character' => $character]);
         
-        return view('home', ['character' => $character]);
-
+        
      }
 
 
 
 }
+
+
