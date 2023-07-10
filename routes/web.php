@@ -20,3 +20,7 @@ use App\Http\Controllers\CharacterController;
 
 
 Route::get('/', [CharacterController::class, 'getCharactersList']);
+
+Route::get('/charackter/{id}', [CharacterController::class, 'showCharacterUrl'])->name('character.show');
+
+

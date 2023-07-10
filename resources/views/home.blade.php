@@ -13,7 +13,8 @@
             @foreach ($characters as $character)
                 <div class="col-md-3 character-box">
                     <img src="{{ $character['image'] }}" alt="{{ $character['name'] }}">
-                    <h1>{{ $character['name'] }}</h1>
+                   <a href="{{ route('character.show', ['id' => $character['name']]) }}"><h1>{{ $character['name'] }}</h1></a>
+                   
                 </div>
             @endforeach
         </div>
