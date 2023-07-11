@@ -19,7 +19,7 @@
         </div>
 
         <div class="d-flex justify-content-center mt-4">
-            {{ $characters->links() }}
+            {{ $characters->links('pagination::bootstrap-4') }}
         </div>
       </div>
     <script src="{{ asset('js/app.js') }}"></script>
