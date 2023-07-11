@@ -19,7 +19,9 @@ use App\Http\Controllers\CharacterController;
 // });
 
 
-Route::get('/', [CharacterController::class, 'getCharactersList']);
+
+
+Route::get('/', [CharacterController::class, 'getCharactersList'])->name('home');
 
 Route::get('/character/details/{id}', [CharacterController::class, 'getCharacterDetails'])->name('character-details.show-details');
 

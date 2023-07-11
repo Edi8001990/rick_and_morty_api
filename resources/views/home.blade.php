@@ -17,6 +17,10 @@
                 </div>
             @endforeach
         </div>
+
+        <div class="d-flex justify-content-center mt-4">
+            {{ $characters->links() }}
+        </div>
       </div>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

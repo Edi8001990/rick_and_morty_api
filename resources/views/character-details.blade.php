@@ -9,6 +9,7 @@
     <body>
       <div class="container">
       <div class="row  list-box">
+      <img src="{{ $character['image'] }}" alt="{{ $character['name'] }}">
       <h1>{{ $character['name'] }}</h1> 
       <h1>{{ $character['species'] }}</h1> 
       <h1>@if ($character['origin']['name'] == 'unknown')
