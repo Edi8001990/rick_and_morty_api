@@ -22,7 +22,7 @@ class CharacterController extends Controller
 
 
 
-   // Get characters list and pagination
+   // Get characters list and pagination at the home.blade.php
 
    public function getCharactersList(Request $request){
        $page = $request->query('page', 1);
@@ -52,9 +52,8 @@ class CharacterController extends Controller
         $character = $characterResponse->json();
 
         return view('character-details', ['character' => $character]);
-        
-        
-     }
+     
+   }
 
 
 

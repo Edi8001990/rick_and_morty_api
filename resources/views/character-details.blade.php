@@ -8,18 +8,44 @@
     </head>
     <body>
       <div class="container">
-      <div class="row  list-box">
-      <img src="{{ $character['image'] }}" alt="{{ $character['name'] }}">
-      <h1>{{ $character['name'] }}</h1> 
-      <h1>{{ $character['species'] }}</h1> 
-      <h1>@if ($character['origin']['name'] == 'unknown')
-                  Not Specified   
-              @else
-              {{ $character['origin']['name'] }}
-              @endif
-       </h1>
-      
-      <ul class="list-group">
+          <h1 class="text-center">{{ $character['name'] }}</h1> 
+      <div class="row list-box single-character-box">
+          <div class="col-4">
+              <img src="{{ $character['image'] }}" alt="{{ $character['name'] }}">
+          </div>
+          <div class="col">
+                <h1>Character Name: <span class="bold-detail">{{ $character['name'] }}</span></h1> 
+                <h1>Species: <span class="bold-detail">{{ $character['species'] }}</span></h1> 
+                <h1>Origin: <span class="bold-detail">@if ($character['origin']['name'] == 'unknown')
+                            <span class="no-info">Not Specified</span>   
+                        @else
+                        {{ $character['origin']['name'] }}
+                        @endif</span>
+                </h1>
+          </div>
+
+
+  <div class="episodes-info-box">
+    @php
+        $episodes = $character['episode'];
+    @endphp
+        @if (count($episodes) == 1)
+          <h1>This character is appearing at this single episode:</h1>
+        
+        @elseif (count($episodes) > 1)
+          <h1>This character is appearing at the following episodes:</h1>
+        @endif
+  </div>  
+   
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Episode</th>
+      </tr>
+    </thead>
+    <tbody>
+   <!-- Get all episodes for single character -->
       @php
         $episodes = $character['episode'];
       @endphp
@@ -32,10 +58,14 @@
                     
                     $episodesCount = count($character['episode']);
               @endphp
-
-            <li class="list-group-item list-group-item-action">{{ $loop->iteration }}. {{ $episode['name'] }}</li>
+                  <tr>
+                      <th scope="row">{{ $loop->iteration }}</th>
+                      <td>{{ $episode['name'] }}</td>
+                  </tr>
           @endforeach
-       </ul>
+      </tbody>
+      </table>
+
         </div>
       </div>
     <script src="{{ asset('js/app.js') }}"></script>

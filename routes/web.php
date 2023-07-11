@@ -33,3 +33,4 @@ Route::get('/character/details/{id}', [CharacterController::class, 'getCharacter
 
 
 
+
