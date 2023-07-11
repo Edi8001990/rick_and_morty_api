@@ -42,6 +42,7 @@
       <tr>
         <th scope="col">#</th>
         <th scope="col">Episode</th>
+        <th scope="col">Episode Title</th>
       </tr>
     </thead>
     <tbody>
@@ -60,6 +61,7 @@
               @endphp
                   <tr>
                       <th scope="row">{{ $loop->iteration }}</th>
+                      <td>{{ $episode['episode'] }}</td>
                       <td>{{ $episode['name'] }}</td>
                   </tr>
           @endforeach
